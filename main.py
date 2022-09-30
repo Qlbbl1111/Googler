@@ -46,7 +46,7 @@ async def g(ctx):
   google ="https://www.google.com/search?q="
   message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
   arg = re.sub("\s", "+", message.content)
-  await ctx.reply(f'{google}{arg}')
+  await ctx.send(f'{message.author.mention}\n{google}{arg}')
 
 @g.error
 async def g_error(ctx, error):
